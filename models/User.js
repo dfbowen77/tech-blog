@@ -7,6 +7,7 @@ const bcrypt = require('bcrypt');
 // connect to the database using sequelize. 
 const sequelize = require('../config/connection');
 
+// TODO: add comment explaining this functionality. It is a little more complicated than the other models due to the password component. 
 class User extends Model {
     checkPassword(loginPw) {
       return bcrypt.compareSync(loginPw, this.password);
@@ -15,6 +16,7 @@ class User extends Model {
   
 User.init(
   {
+    // defining all the model attributes
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
