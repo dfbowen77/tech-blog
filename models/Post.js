@@ -1,13 +1,13 @@
-// By destructuring sequelize we can only pull out the things we need: in this case, the model and the datatypes so we can define the BlogPost model
+// By destructuring sequelize we can only pull out the things we need: in this case, the model and the datatypes so we can define the Post model
 const { Model, DataTypes} = require('sequelize')
 
 // connect to the database using sequelize.
 const sequelize = require('../config/connection');
 
 // The class extends Model is one of the ways in sequelize that models can be defined. This line of code allows us to use the init method a few lines later in the code and to define all the model attributes. 
-class BlogPost extends Model{}
+class Post extends Model{}
 
-BlogPost.init(
+Post.init(
     {
         // defining all the model attributes
         id: {
@@ -31,12 +31,14 @@ BlogPost.init(
                 key: 'id'
             }
         },
+    },
+        {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'blogpost',
-    }
+        modelName: 'post',
+        }
 )
 
-module.exports = BlogPost
+module.exports = Post

@@ -1,25 +1,25 @@
 // import the various models to define their associations/relationships
 const User = require('./User')
-const BlogPost = require('./Blogpost')
+const Post = require('./Post')
 const Comment = require('./Comment')
 
 // Define the associations/relationships between the three models
 
-User.hasMany(BlogPost, {
+User.hasMany(Post, {
     foreignKey: 'user_id'
 })
 
-BlogPost.belongsTo(User, {
+Post.belongsTo(User, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
 })
 
-BlogPost.hasMany(Comment, {
-    foreignKey: 'blogpost_id',
+Post.hasMany(Comment, {
+    foreignKey: 'post_id',
 })
 
-Comment.belongsTo(BlogPost, {
-    foreignKey: 'blogpost_id',
+Comment.belongsTo(Post, {
+    foreignKey: 'post_id',
     onDelete: 'CASCADE'
 })
 
@@ -33,4 +33,4 @@ Comment.belongsTo(User, {
 })
 
 // Export the defined relationships for use in other files. 
-module.exports = { User, Comment, BlogPost }
+module.exports = { User, Comment, Post }
