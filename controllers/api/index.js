@@ -1,8 +1,10 @@
 const router = require('express').Router()
+const userRoutes = require('./userRoutes')
+const postRoutes = require('./postRoutes')
+const commentRoutes = require('./commentRoutes')
 
-router.get('/', async (req, res) => {
-    console.log('Testing!!!')
-    res.render('login')
-})
+router.use('./users', userRoutes)
+router.use('./posts', postRoutes)
+router.use('./comments', commentRoutes)
 
 module.exports = router
