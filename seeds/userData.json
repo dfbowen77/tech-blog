@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Daniel Bowen",
+    "email": "danielbowen@email.com",
+    "password": "password12345"
+  },
+  {
+    "name": "Jennie Bowen",
+    "email": "jenniebowen@email.com",
+    "password": "password12345"
+  },
+  {
+    "name": "Charlie Peters",
+    "email": "charliepeters@email.com",
+    "password": "password12345"
+  }
+]

@@ -20,7 +20,7 @@ Comment.init(
             type: DataTypes.TEXT,
             allowNull: false,
         },
-            post_id: {
+        post_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             reference: {
