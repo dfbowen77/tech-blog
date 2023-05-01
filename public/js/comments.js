@@ -14,6 +14,8 @@ const commentFormHandler = async (event) => {
             headers: { 'Content-Type': 'application/json' }
         })
 
+        console.log(postComment)
+        
         if (postComment.ok) {
             document.location.reload()
         } else {
