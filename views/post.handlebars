@@ -13,9 +13,9 @@
 </form>
 {{/if}}
 <h3>Comment Log:</h3>
-{{#each comments}}
+{{#each comments as |comment|}}
 <div class="comment mb-3">
-  <p>{{text}}</p>
+  <p>{{comment.text}}</p>
   <p>Made by: {{user.name}} on {{format_date date_created}}</p>
 </div>
 {{/each}}
