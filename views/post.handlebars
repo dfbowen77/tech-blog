@@ -1,8 +1,24 @@
 <div class="text-center">
   <h2>{{title}}</h2>
+    <p>Created by {{user.name}} on {{format_date date_created}}</p>
   <p>{{text}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>
-    <button class="btn btn-primary">Comment on this Post!</button>
-  </p>
+{{#if logged_in}}
+<form class="add-comment-form" class="mb-3">
+  <div class="mb-3">
+    <label for="comment" class="form-label">Add a Comment:</label>
+    <textarea class="form-control" id="add-comment" rows="5" placeholder="Add a comment">
+    </textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{{/if}}
+<h3>Comment Log:</h3>
+{{#each comments}}
+<div class="comment mb-3">
+  <p>{{text}}</p>
+  <p>Made by: {{user.name}} on {{format_date date_created}}</p>
 </div>
+{{/each}}
+</div>
+
+<script src="/js/comments.js"></script>
