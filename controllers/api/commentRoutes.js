@@ -8,6 +8,12 @@ router.get('/', async (req, res) => {
         const commentAll = await Comment.findAll({
             include: [{ model: User }]
         })
+
+        const comments = commentAll.map((comment) => comment.get({ plain: true }));
+
+        console.log(comments);
+        
+        res.render('post', {comments, loggedIn: req.session.loggedIn});
         res.status(200).json(commentAll)
     } catch (err) {
         res.status(500).json(err)
