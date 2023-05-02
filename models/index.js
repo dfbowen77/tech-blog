@@ -3,7 +3,7 @@ const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment')
 
-// Define the associations/relationships between the three models
+// Defines the associations/relationships between the three models
 User.hasMany(Post, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'

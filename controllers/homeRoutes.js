@@ -15,6 +15,7 @@ router.get('/', async (req, res) => {
     });
 
     // Serialize data so the template can read it
+    // the map method creates a new array populated with the results of calling a functino on eveny element in the calling array. So... in this case, postData is mapped and the resulting output is posts. 
     const posts = postData.map((post) => post.get({ plain: true }));
 
     // Pass serialized data and session flag into template
@@ -29,6 +30,7 @@ router.get('/', async (req, res) => {
 
 router.get('/post/:id', async (req, res) => {
   try {
+    // Get one post and join it with both the user and the comment data
     const postData = await Post.findByPk(req.params.id, {
       include: [
         {

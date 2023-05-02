@@ -1,3 +1,4 @@
+// This script is used to add comments to the post.handlebars page. 
 const commentFormHandler = async (event) => {
     event.preventDefault()
 

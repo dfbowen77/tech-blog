@@ -17,7 +17,7 @@
         <a href="/">Dan Bowen's Technology Blog</a>
       </h1>
       <nav>
-        <!-- Conditionally render login or logout links -->
+        <!-- The view changes depending on whether the user is logged in or logged out.  -->
         {{#if logged_in}}
         <a href="/dashboard">dashboard</a> |
         <button class="no-button" id="logout">logout</button>
@@ -30,7 +30,7 @@
       </nav>
     </header>
     <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
+      <!-- Renders the sub layout (i.e. this is a placeholder that will later be filled with content from another handlebars file. ) -->
       {{{ body }}}
     </main>
     <footer>
@@ -38,7 +38,7 @@
     </footer>
   </div>
 
-  <!-- Render script for logged in users only -->
+  <!-- Only users who are logged in will see this section -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}

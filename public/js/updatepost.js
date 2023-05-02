@@ -4,12 +4,13 @@ const post_id = window.location.toString().split("/")[
 
 const updatePostFormHandler = async (event) => {
     event.preventDefault()
-
+    // gathers information from the update post form 
     const title = document.querySelector('#update-post-title').value.trim()
     const text = document.querySelector('#update-post-text').value.trim()
 
     if (title && text) {
         const updatePost = await fetch(`/api/posts/${post_id}`, {
+            // sends a put request to the api endpoint
             method: "PUT",
             body: JSON.stringify({ title, text}),
             headers: { 'Content-Type': 'application/json'}
@@ -26,6 +27,7 @@ const deletePostFormHandler = async (event) => {
     event.preventDefault()
 
     const deletePost = await fetch(`/api/posts/${post_id}`, {
+        // sends a delete request to the api endpoint
         method: 'DELETE'
     })
 
