@@ -56,6 +56,9 @@ router.put("/:id", withAuth, async (req, res) => {
       res.status(404).json({ message: `No record exists of a post with an id of ${req.params.id}` });
       return;
     }
+    console.log(req.body)
+    console.log(req.params.id)
+    console.log(updatePost)
     res.status(200).json(updatePost);
   } catch (err) {
     res.status(500).json(err);
