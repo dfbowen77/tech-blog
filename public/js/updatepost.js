@@ -5,13 +5,13 @@ const post_id = window.location.toString().split("/")[
 const updatePostFormHandler = async (event) => {
     event.preventDefault()
 
-    const postTitle = document.querySelector('#update-post-title').value.trim()
-    const postText = document.querySelector('#update-post-text').value.trim()
-    
-    if (postTitle && postText) {
+    const title = document.querySelector('#update-post-title').value.trim()
+    const text = document.querySelector('#update-post-text').value.trim()
+
+    if (title && text) {
         const updatePost = await fetch(`/api/posts/${post_id}`, {
             method: "PUT",
-            body: JSON.stringify({ postTitle, postText}),
+            body: JSON.stringify({ title, text}),
             headers: { 'Content-Type': 'application/json'}
         })
         if (updatePost.ok) {
